@@ -19,47 +19,76 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [
         Locale('fa'), // farsi
       ],
-      theme: ThemeData(fontFamily: 'Nazanin'),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          appBar: AppBar(backgroundColor: Colors.white, actions: [
-            Expanded(
-                child: Align(
-              alignment: Alignment.centerRight,
-              child: Image.asset("assets/images/menu.png"),
-              /*child: const Text("منو",
-              style: TextStyle(color: Colors.black),
-            ),*/
-            )),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Image.asset("assets/images/logo.png")),
-            //Text("یکصد و یک"),
-            const SizedBox(
-              width: 7,
+      theme: ThemeData(
+          fontFamily: 'Nazanin',
+          textTheme: TextTheme(
+            headline1: TextStyle(
+              fontFamily: 'Nazanin',
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
             ),
-          ]),
-          body: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Image.asset("assets/Images/q.png"),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  const Text("یکصد و یک چیست؟"),
-                ],
-              ),
-              const Text(
-                "پک های یکصد و یک همه نکات، ریز نکات و حتی تست های تالیفی و کنکور در آن گنجانده شده است.",
-                style: TextStyle(color: Colors.black),
-                textDirection: TextDirection.rtl,
-              )
-            ]),
+            bodyText1: TextStyle(
+              fontFamily: 'Nazanin',
+              fontSize: 13,
+              fontWeight: FontWeight.w300,
+            ),
+            headline2: TextStyle(
+              fontFamily: 'Nazanin',
+              fontSize: 14,
+              fontWeight: FontWeight.w300,
+            ),
           )),
+      debugShowCheckedModeBanner: false,
+      home: Home(),
     );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(backgroundColor: Colors.white, actions: [
+          Expanded(
+              child: Align(
+            alignment: Alignment.centerRight,
+            child: Image.asset("assets/images/menu.png"),
+            /*child: const Text("منو",
+            style: TextStyle(color: Colors.black),
+          ),*/
+          )),
+          Align(
+              alignment: Alignment.centerRight,
+              child: Image.asset("assets/images/logo.png")),
+          //Text("یکصد و یک"),
+          const SizedBox(
+            width: 7,
+          ),
+        ]),
+        body: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset("assets/Images/q.png"),
+                const SizedBox(
+                  width: 8,
+                ),
+                const Text("یکصد و یک چیست؟"),
+              ],
+            ),
+            const Text(
+              "پک های یکصد و یک همه نکات، ریز نکات و حتی تست های تالیفی و کنکور در آن گنجانده شده است.",
+              style: TextStyle(color: Colors.black),
+              textDirection: TextDirection.rtl,
+            )
+          ]),
+        ));
   }
 }
 /*
